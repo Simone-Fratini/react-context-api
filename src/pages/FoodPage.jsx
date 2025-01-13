@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import CardComponent from '../components/CardComponent';
+import MainContext  from '../contexts/MainContext';
+
 
 
 function FoodPage() {
-  const [posts, setPosts] = useState([]); 
-
-
-
-  // dati da node backend
-  useEffect(() => {
-    axios
-      .get('http://localhost:3000/posts')
-      .then((response) => {
-        setPosts(response.data.data); 
-      })
-      .catch((error) => {
-        console.error(`errore nell api: ${error}`);
-      });
-  }, []);
+  
+  const {posts, setPosts} = useContext(MainContext)
 
   // funxione per rimuovere card fe e be
   const handleDeleteDish = (e, id) => {
