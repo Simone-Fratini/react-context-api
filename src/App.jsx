@@ -12,6 +12,9 @@ import ErrorPage from './pages/ErrorPage'
 import PostForm from './pages/PostForm';
 import CardPage from './pages/CardPage';
 
+//Contexts
+import MainContext from './contexts/MainContext'
+
 function App() {
   return (
     <BrowserRouter>
